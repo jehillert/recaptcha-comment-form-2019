@@ -9,6 +9,7 @@
 *.sublime-project
 *.sublime-workspace
 *.tgz
+.archive/
 .bit/
 .directory
 .DS_Store
