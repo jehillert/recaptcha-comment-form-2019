@@ -34,28 +34,26 @@ const GlobalStyle = createGlobalStyle`
 
   #primary-container {
     display: grid;
-    grid-column-gap: 0;
     width: 100vw;
     height: 100vh;
+    grid-column-gap: 0;
 
-    @media (min-width: ${(props) => props.theme.bp[2]}) {
+    @media ${props => props.theme.device.phone} {
+      grid-template-areas: "mainBody";
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+    }
+
+    @media ${props => props.theme.device.tabletSM} {
       grid-template-areas:
         "left mainHead right"
         "left mainBody right"
         "left mainFoot right";
       grid-template-columns: 1fr auto 1fr;
-      grid-template-rows: 10% auto 1fr;
-    }
-
-    @media (max-width: ${(props) => props.theme.bp[2]}) {
-      grid-template-areas:
-        "mainHead"
-        "mainBody"
-        "mainFoot";
-      grid-template-columns: auto;
-      grid-template-rows: auto 1fr;
+      grid-template-rows: 5vh auto 1fr;
     }
   }
 `;
+
 
 export default GlobalStyle;
