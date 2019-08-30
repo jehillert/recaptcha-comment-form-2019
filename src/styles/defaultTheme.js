@@ -14,55 +14,43 @@ const abp = [
 
 const gap = (factor = 1) => {
   const padding = 0.5 * factor;
-  return `${padding}rem`
+  return `${padding}rem`;
 };
 
 const m = (factor = 1) => {
   const margin = 0.5 * factor;
-  return `${margin}rem`
+  return `${margin}rem`;
 };
 
 const p = (factor = 1) => {
   const padding = 0.5 * factor;
-  return `${padding}rem`
+  return `${padding}rem`;
 };
 
 const defaultTheme = {
-//BREAK POINTS
+// BREAK POINTS
   bp,
-//COLORS
-  accentColor: '#B81205',
-  lightColor: 'white',
-  darkColor: '#222324',
+// COLORS
+  borderColor: '#607d8b',
   hoverColor: '#D93646',
-  backgroundHoverColor: '#D93646',
-  backgroundBorderHoverColor: '#D93646',
-  primary: '#37474f',
+  bgColor: '#0D2839',
+  bgHoverColor: '#D93646',
+  bgBorderHoverColor: '#D93646',
   fgColor1: '#FFFFFF',
-  fgColor2: '#455a64',
-  fgColor3: '#222324',
-  bgColor1: '#607d8b',
-  bgColor2: '#455a64',
-  bgColor3: '#222324',
-  borderColor1: '#607d8b',
-  borderColor2: '#455a64',
-  borderColor3: '#222324',
-  hoverFontColor: 'white',
-  textColor1: 'white',
-  textColor2: '#9D9D9D',
+  fgColor2: '#9D9D9D',
 
-//DIMENSIONS - Cards, Modals, Dialogs
+// DIMENSIONS - Cards, Modals, Dialogs
 
-//FONT SIZE
+// FONT SIZE
 
-//RADIUS
+// RADIUS
 
-//SPACING
+// SPACING
   gap,
   m,
   p,
 
-//SHADOW
+// SHADOW
   insetBoxShadowBottom: 'inset 0 -10px 10px -10px grey;',
   boxShadow: '0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 0px 1px 10px 0px rgba(0,0,0,0.12)',
   boxShadowTop: '0px -3px 4px -1px rgba(0, 0, 0, 0.2), 0px -5px 5px 0px rgba(0, 0, 0, 0.14), 0px -1px 10px 0px rgba(0, 0, 0, 0.12);',

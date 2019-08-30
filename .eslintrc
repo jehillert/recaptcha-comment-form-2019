@@ -36,7 +36,7 @@
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn",
       "react/jsx-quotes": 0,
+      "react/jsx-filename-extension": "off",
       "template-curly-spacing": "off"
     }
 }
-

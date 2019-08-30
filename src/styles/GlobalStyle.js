@@ -38,16 +38,16 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     height: 100vh;
 
-    @media (min-width: ${props => props.theme.bp[2]}) {
+    @media (min-width: ${(props) => props.theme.bp[2]}) {
       grid-template-areas:
         "left mainHead right"
         "left mainBody right"
         "left mainFoot right";
       grid-template-columns: 1fr auto 1fr;
-      grid-template-rows: auto 1fr;
+      grid-template-rows: 10% auto 1fr;
     }
 
-    @media (max-width: ${props => props.theme.bp[2]}) {
+    @media (max-width: ${(props) => props.theme.bp[2]}) {
       grid-template-areas:
         "mainHead"
         "mainBody"
