@@ -3,7 +3,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/GlobalStyle';
 import defaultTheme from '../styles/defaultTheme';
 import Form from './form/Form';
-import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 import { reCaptchaKey } from '../config';
 
 const S = {};
@@ -23,16 +22,14 @@ S.BodyContainer = styled.div`
 `;
 function App() {
   return (
-    <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
-      <ThemeProvider theme={defaultTheme}>
-        <S.AppContainer id='primary-container'>
-          <GlobalStyle />
-          <S.BodyContainer>
-            <Form />
-          </S.BodyContainer>
-        </S.AppContainer>
-      </ThemeProvider>
-    </GoogleReCaptchaProvider>
+    <ThemeProvider theme={defaultTheme}>
+      <S.AppContainer id='primary-container'>
+        <GlobalStyle />
+        <S.BodyContainer>
+          <Form />
+        </S.BodyContainer>
+      </S.AppContainer>
+    </ThemeProvider>
   );
 }
 
