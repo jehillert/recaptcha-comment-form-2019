@@ -79,7 +79,7 @@ function Form() {
   const [subject, setSubject] = useState('');
 
   const handleSubmit = async (event) => {
-    load('reCaptchaKey').then((recaptcha) => {
+    load(reCaptchaKey).then((recaptcha) => {
       recaptcha.execute('<action>').then((token) => {
           console.log(token); // Will print the token
           alert(token);

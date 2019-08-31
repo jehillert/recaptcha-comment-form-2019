@@ -12,11 +12,6 @@ const device = {
   phone: `(min-width: ${size.phone})`,
 };
 
-const gap = (factor = 1) => {
-  const padding = 0.5 * factor;
-  return `${padding}rem`;
-};
-
 const m = (factor = 1) => {
   const margin = 0.5 * factor;
   return `${margin}rem`;
