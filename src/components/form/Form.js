@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import FormTextBlock from './FormTextBlock';
+import Reaptcha from 'reaptcha';
 
 const S = {};
 
@@ -69,28 +70,40 @@ S.SubmitButton = styled.button`
 `;
 
 function Form() {
-  const [name, setName] = useState('John Hillert');
-  const [email, setEmail] = useState('john.hillert@gmail.com');
-  const [subject, setSubject] = useState('A fat pomerianian');
-  const [message, setMessage] = useState('is a happy pomeranian');
-  // const [name, setName] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [subject, setSubject] = useState('');
-  // const [message, setMessage] = useState('');
+  const [captcha, setCaptcha] = useState(null);
+  const [verified, setVerified] = useState(false);
+  // const [name, setName] = useState('John Hillert');
+  // const [email, setEmail] = useState('john.hillert@gmail.com');
+  // const [subject, setSubject] = useState('A fat pomerianian');
+  // const [message, setMessage] = useState('is a happy pomeranian');
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
-  const handleSubmit = (event) => {
+  const onVerify = () => {
+    setVerified(true);
+  };
+
+  const handleSubmit = async (event) => {
+    alert(verified)
     event.preventDefault();
-    const submitData = {
-      name,
-      email,
-      subject,
-      message,
-    };
+    await captcha.execute();
+    alert(verified)
 
-    const strSubmitData = JSON.stringify(submitData);
+    if (verified) {
+      const data = {
+        name,
+        email,
+        subject,
+        message,
+      };
 
-    // console.log(`reCaptcha Token:\n${token}`)
-    console.log(`Form Data:\n${strSubmitData}`);
+      const strData = JSON.stringify(data);
+
+      console.log(`reCaptcha:\n${captcha}`)
+      console.log(`Form Data:\n${strData}`);
+    }
   };
 
   return (
@@ -123,9 +136,11 @@ function Form() {
         value={message}
         onChange={e => setMessage(e.target.value)}
       />
-      <div
-        className='g-recaptcha'
-        data-sitekey='6Le66rUUAAAAAE28386VqCQAntTWrHdPHeiaM9EO'
+      <Reaptcha
+        ref={e => setCaptcha(e)}
+        sitekey='6Le66rUUAAAAAE28386VqCQAntTWrHdPHeiaM9EO'
+        onVerify={onVerify}
+        size='invisible'
       />
       <div>
         <S.SubmitButton value='Submit'>Submit</S.SubmitButton>

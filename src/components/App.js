@@ -22,23 +22,6 @@ S.BodyContainer = styled.div`
   }
 `;
 
-// class App extends React.Component {
-//   // componentDidMount() {}
-
-//   render() {
-//     return (
-//       <ThemeProvider theme={defaultTheme}>
-//         <S.AppContainer id='primary-container'>
-//           <GlobalStyle />
-//           <S.BodyContainer>
-//             <Form />
-//           </S.BodyContainer>
-//         </S.AppContainer>
-//       </ThemeProvider>
-//     );
-//   }
-// }
-
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
     <S.AppContainer id='primary-container'>
