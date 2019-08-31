@@ -27,7 +27,7 @@ const defaultTheme = {
   m,
   p,
   /* break points */
-  device: device,
+  device,
   /* font size */
   formTitleFontSize: '1.5rem',
   /* dimensions */

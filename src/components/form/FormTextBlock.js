@@ -21,9 +21,11 @@ const FormTextBlock = () => (
   <S.TextBlockContainer>
     <S.FormTitle>Contact Us</S.FormTitle>
     <S.FormInstructions>
-      <p>Please leave us your message below, along with your name and
-      email address.  We will do our best to respond by the end of
-      the next business day.</p>
+      <p>
+        Please leave us your message below, along with your name and
+        email address.  We will do our best to respond by the end of
+        the next business day.
+      </p>
       Thank you.
     </S.FormInstructions>
   </S.TextBlockContainer>

@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/GlobalStyle';
 import defaultTheme from '../styles/defaultTheme';
 import Form from './form/Form';
+import { loadReCaptcha } from 'react-recaptcha-v3';
 
 const S = {};
 
@@ -22,17 +23,23 @@ S.BodyContainer = styled.div`
   }
 `;
 
-function App() {
-  return (
-    <ThemeProvider theme={defaultTheme}>
-      <S.AppContainer id='primary-container'>
-        <GlobalStyle />
-        <S.BodyContainer>
-          <Form />
-        </S.BodyContainer>
-      </S.AppContainer>
-    </ThemeProvider>
-  );
+class App extends React.Component {
+  componentDidMount() {
+    loadReCaptcha('6Le66rUUAAAAAE28386VqCQAntTWrHdPHeiaM9EO');
+  }
+
+  render() {
+    return (
+      <ThemeProvider theme={defaultTheme}>
+        <S.AppContainer id='primary-container'>
+          <GlobalStyle />
+          <S.BodyContainer>
+            <Form />
+          </S.BodyContainer>
+        </S.AppContainer>
+      </ThemeProvider>
+    );
+  }
 }
 
 export default App;

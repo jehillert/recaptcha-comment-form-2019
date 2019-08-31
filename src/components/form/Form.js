@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import FormTextBlock from './FormTextBlock';
-import { reCaptchaKey } from '../../config';
+import { ReCaptcha } from 'react-recaptcha-v3'
 
 const S = {};
 
@@ -91,7 +91,12 @@ function Form() {
     const strSubmitData = JSON.stringify(submitData);
 
     // console.log(`reCaptcha Token:\n${token}`)
-    // console.log(`Form Data:\n${strSubmitData}`);
+    console.log(`Form Data:\n${strSubmitData}`);
+  };
+
+  const verifyCallback = (recaptchaToken) => {
+    // Here you will get the final recaptchaToken!!!
+    console.log(recaptchaToken, "<= your recaptcha token")
   }
 
   return (
@@ -124,10 +129,11 @@ function Form() {
         value={message}
         onChange={e => setMessage(e.target.value)}
       />
-      <div
-        class='g-recaptcha'
-        data-sitekey={reCaptchaKey}
-      ></div>
+      <ReCaptcha
+        sitekey='6Le66rUUAAAAAE28386VqCQAntTWrHdPHeiaM9EO'
+        action='BLAHDFKDLSFKJDSLKFJ'
+        verifyCallback={verifyCallback}
+      />
       <div>
         <S.SubmitButton value='Submit'>Submit</S.SubmitButton>
       </div>
