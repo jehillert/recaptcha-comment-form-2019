@@ -3,6 +3,8 @@ import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/GlobalStyle';
 import defaultTheme from '../styles/defaultTheme';
 import Form from './form/Form';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
+import { reCaptchaKey } from '../config';
 
 const S = {};
 
@@ -19,17 +21,18 @@ S.BodyContainer = styled.div`
     padding: ${(props) => props.theme.p(1)};
   }
 `;
-
 function App() {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <S.AppContainer id='primary-container'>
-        <GlobalStyle />
-        <S.BodyContainer>
-          <Form />
-        </S.BodyContainer>
-      </S.AppContainer>
-    </ThemeProvider>
+    <GoogleReCaptchaProvider reCaptchaKey={reCaptchaKey}>
+      <ThemeProvider theme={defaultTheme}>
+        <S.AppContainer id='primary-container'>
+          <GlobalStyle />
+          <S.BodyContainer>
+            <Form />
+          </S.BodyContainer>
+        </S.AppContainer>
+      </ThemeProvider>
+    </GoogleReCaptchaProvider>
   );
 }
 

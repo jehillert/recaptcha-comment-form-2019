@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import FormTextBlock from './FormTextBlock';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 // import PropTypes from 'prop-types';
 // import * as EmailValidator from 'email-validator';
 
@@ -71,14 +72,23 @@ S.SubmitButton = styled.input`
 `;
 
 function Form() {
-  const [name, setName] = useState('');
   const [email, setEmail] = useState('');
-  const [subject, setSubject] = useState('');
   const [message, setMessage] = useState('');
+  const [name, setName] = useState('');
+  const [subject, setSubject] = useState('');
+  const [token, setToken] = useState('');
 
-  const handleSubmit = (event) => {
-    alert('Submitted!');
-    // IF IT PASSES CAPTCHA, THEN DO THE FOLLOWING
+  const { executeRecaptcha } = useGoogleReCaptcha();
+
+  const handleSubmit = async (event) => {
+    console.log('Not yet');
+    if (!executeRecaptcha) {
+      return;
+    }
+
+    const result = await executeRecaptcha("homepage");
+    setToken(result);
+
     event.preventDefault();
   };
 
