@@ -3,7 +3,6 @@ import styled, { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../styles/GlobalStyle';
 import defaultTheme from '../styles/defaultTheme';
 import Form from './form/Form';
-import { reCaptchaKey } from '../config';
 
 const S = {};
 
@@ -13,13 +12,16 @@ S.AppContainer = styled.div`
 
 S.BodyContainer = styled.div`
   grid-area: mainBody;
+
   @media ${props => props.theme.device.phone} {
     padding: ${(props) => props.theme.p(0)};
   }
+
   @media ${props => props.theme.device.tabletSM} {
     padding: ${(props) => props.theme.p(1)};
   }
 `;
+
 function App() {
   return (
     <ThemeProvider theme={defaultTheme}>

@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import FormTextBlock from './FormTextBlock';
-import { load } from 'recaptcha-v3'
 import { reCaptchaKey } from '../../config';
-
-// import PropTypes from 'prop-types';
 
 const S = {};
 
@@ -62,7 +59,7 @@ S.MessageField = styled.textarea`
   padding: ${props => props.theme.p(1)};
 `;
 
-S.SubmitButton = styled.input`
+S.SubmitButton = styled.button`
   color:  ${props => props.theme.btnFgColor};
   background-color:  ${props => props.theme.btnBgColor};
   height: ${props => props.theme.btnHeight};
@@ -73,20 +70,29 @@ S.SubmitButton = styled.input`
 `;
 
 function Form() {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [name, setName] = useState('');
-  const [subject, setSubject] = useState('');
+  const [name, setName] = useState('John Hillert');
+  const [email, setEmail] = useState('john.hillert@gmail.com');
+  const [subject, setSubject] = useState('A fat pomerianian');
+  const [message, setMessage] = useState('is a happy pomeranian');
+  // const [name, setName] = useState('');
+  // const [email, setEmail] = useState('');
+  // const [subject, setSubject] = useState('');
+  // const [message, setMessage] = useState('');
 
-  const handleSubmit = async (event) => {
-    load(reCaptchaKey).then((recaptcha) => {
-      recaptcha.execute('<action>').then((token) => {
-          console.log(token); // Will print the token
-          alert(token);
-        })
-    })
+  const handleSubmit = (event) => {
     event.preventDefault();
-  };
+    const submitData = {
+      name,
+      email,
+      subject,
+      message,
+    };
+
+    const strSubmitData = JSON.stringify(submitData);
+
+    // console.log(`reCaptcha Token:\n${token}`)
+    // console.log(`Form Data:\n${strSubmitData}`);
+  }
 
   return (
     <S.Form onSubmit={handleSubmit}>
@@ -118,17 +124,15 @@ function Form() {
         value={message}
         onChange={e => setMessage(e.target.value)}
       />
+      <div
+        class='g-recaptcha'
+        data-sitekey={reCaptchaKey}
+      ></div>
       <div>
-        <S.SubmitButton
-          type='submit'
-          value='Submit'
-        />
+        <S.SubmitButton value='Submit'>Submit</S.SubmitButton>
       </div>
     </S.Form>
   );
 }
-
-// Form.defaultProps = {};
-// Form.propTypes = {};
 
 export default Form;
