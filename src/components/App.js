@@ -6,7 +6,6 @@ import Form from './form/Form';
 
 const S = {};
 
-  // background-color: #0D2839;
 S.AppContainer = styled.div`
   background-color: ${props => props.theme.bgColor1};
 `;
