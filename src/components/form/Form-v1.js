@@ -75,32 +75,48 @@ S.Indicator = styled.div`
   width: 1rem;
 `;
 
-function Form() {
-  const initialFormData = {
-    name: '',
-    email: '',
-    subject: '',
-    message: '',
-  };
+// maybe you can kill Reaptcha with && as soon as it verifies
+// That will get you away from all of this mess.
+// A user does not suddently become bot halfway through a transaction
+// so a single session reload should not be a concern.
 
-  const [formData, setFormData] = useState(initialFormData)
+// half na hour on it and thne you are done
+// no icon.  no other part of the project.
+
+// const [name, setName] = useState('John Hillert');
+// const [email, setEmail] = useState('john.hillert@gmail.com');
+// const [subject, setSubject] = useState('A fat pomerianian');
+// const [message, setMessage] = useState('is a happy pomeranian');
+
+function Form() {
   const [bgColor, setBgColor] = useState('#CF8080');
   const [captcha, setCaptcha] = useState(null);
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
 
-  const resetForm = () => {
-    setFormData(initialFormData);
-    setBgColor('lightgreen');
-    return captcha.reset();
-  }
+  // const resetForm = () => {
+  //   setName('');
+  //   setEmail('');
+  //   setSubject('');
+  //   setMessage('');
+  // };
 
   const showData = () => {
     const div = '—'.repeat(40);
     const titleCSS = 'color: white; font-weight: bold';
     const divCSS = 'color: yellow; font-weight: bold';
     const dataCSS = 'color: white';
+    const data = {
+      name,
+      email,
+      subject,
+      message,
+    };
     console.clear();
-    console.log(`%c${div}\n%c FORM DATA\n%c${div}%c\n${JSON.stringify(formData, null, 2)}`, divCSS, titleCSS, divCSS, dataCSS);
-    console.table(formData);
+    console.log(`%c${div}\n%c FORM DATA\n%c${div}%c\n${JSON.stringify(data, null, 2)}`, divCSS, titleCSS, divCSS, dataCSS);
+    console.table(data);
   };
 
   const handleClick = async (event) => {
@@ -112,13 +128,6 @@ function Form() {
 
   const onVerify = () => {
     setBgColor('lightgreen');
-  };
-
-  const updateFormData = (event) => {
-    setFormData({
-      ...formData,
-      [event.target.id]: event.target.value,
-    });
   };
 
   return (
@@ -133,37 +142,37 @@ function Form() {
         <FormTextBlock />
         <S.ShortFieldContainer>
           <S.NameField
-            id='name'
+            name='name'
             placeholder='Name'
             type='text'
-            value={formData.name}
+            value={name}
             bgColor={bgColor}
-            onChange={updateFormData}
+            onChange={e => setName(e.target.value)}
           />
           <S.EmailField
-            id='email'
+            name='email'
             placeholder='Email'
             type='email'
-            value={formData.email}
+            value={email}
             bgColor={bgColor}
-            onChange={updateFormData}
+            onChange={e => setEmail(e.target.value)}
           />
         </S.ShortFieldContainer>
         <S.SubjectField
-          id='subject'
+          name='subject'
           placeholder='Subject'
           type='text'
-          value={formData.subject}
+          value={subject}
           bgColor={bgColor}
-          onChange={updateFormData}
+          onChange={e => setSubject(e.target.value)}
         />
         <S.MessageField
-          id='message'
+          name='message'
           placeholder='Message'
           rows={10}
-          value={formData.message}
+          value={message}
           bgColor={bgColor}
-          onChange={updateFormData}
+          onChange={e => setMessage(e.target.value)}
         />
         <div>
           <S.SubmitButton
