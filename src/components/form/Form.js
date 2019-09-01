@@ -4,28 +4,6 @@ import FormTextBlock from './FormTextBlock';
 import Reaptcha from 'reaptcha';
 
 /*
-NOTE TO HEADSTORM
-  The sitekey is embedded in code below only because this is a coding
-  exercise. Ordinarily I would handle storage of the key, other env-
-  specific variables, and other sensitive data required DEVELOPMENT
-  MODE as follows:
-    - Create a ".env" file in the project's root directory. This
-      file would hold the actual values;
-    - Add ".env" to gitignore file;
-    - Make values accessible during runtime using the "dotenv" library
-      (accessible via "process.env.MY_ENV_VAR");
-    - Avoid use of global variables by creating a ".config" file in
-      the project's root directory.  The file includes as an export
-      a const variable that is equivalalent to one of the enviroment
-      variables in the .env file;
-    - In the application itself, refer to the environment variables
-      only via the constants declared in the .config file;
-    - If there were collaborators on the project, I would include a
-      ".env.example" file with dummy values, so that the collaborators
-      would have an idea of what they needed to include in their own
-      .env files.  ".env.example" would not be added to gitignore.
-  For PRODUCTION MODE, I would create the necessary environment variables
-  using the hosting platform's console.  There would be no .env file.
 
 NOTE TO SELF
 - Execution and rendering of the captcha are two different things.
@@ -124,6 +102,7 @@ function Form() {
     message: '',
   };
 
+  // eslint-disable-next-line no-unused-vars
   const [token, setToken] = useState(''); // not necessary, but included for comprehensibility
   const [captcha, setCaptcha] = useState(null);
   const [bgColor, setBgColor] = useState('#CF8080');
@@ -132,6 +111,7 @@ function Form() {
 
   useEffect(() => {
     if (isVerified) {
+      // eslint-disable-next-line no-use-before-define
       showData(formData);
     }
 
