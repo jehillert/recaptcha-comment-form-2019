@@ -1,0 +1,99 @@
+-------------------------------------------------------------------------------
+ LAYOUT - WEB FORM
+-------------------------------------------------------------------------------
+
+  Contact Us                                                         │ FormTextbLOCK.js
+                                                                     │
+  Please leave us your message below, along with your name and       │
+  email address.  We will do our best to respond by the end of       │
+  the next business day.                                             │
+                                                                     │
+  Thank you.                                                         │
+
+  ┌────────────────────────────┐ ┌────────────────────────────┐      │ [tbd]
+  │ Name                       │ │ Email                      │      │
+  └────────────────────────────┘ └────────────────────────────┘      │
+  ┌───────────────────────────────────────────────────────────┐      │
+  │ Subject                                                   │      │
+  └───────────────────────────────────────────────────────────┘      │
+  ┌───────────────────────────────────────────────────────────┐      │
+  │ Message                                                   │      │
+  │                                                           │      │
+  │                                                           │      │
+  │                                                           │      │
+  └───────────────────────────────────────────────────────────┘
+                                                     ┌────────┐      │ [local]
+                                                     │ SUBMIT │      │
+                                                     └────────┘      │
+
+-------------------------------------------------------------------------------
+ MISCELLANEOUS
+-------------------------------------------------------------------------------
+- Cows without Thrones, LLC
+- A bovine movie memorabilia corporation
+- Save linting till the end since project is short (unless bad bug)
+
+-------------------------------------------------------------------------------
+ PERSONAL REMINDERS
+-------------------------------------------------------------------------------
+- Zero feature creep. anything added, comes after the requirements are met...
+  for all three projects.
+
+- Of all things, this company probably wants to know:
+  > Do you follow instructions
+  > Can you create for them the thing they asked for,
+    with minimal feedback.
+
+-------------------------------------------------------------------------------
+ ASSUMPTIONS
+-------------------------------------------------------------------------------
+- testing is probably expected
+
+- Github repos of person who wrote challenges suggests clean, neat
+  code would be appreciated.
+
+- ok to use quickest way to get started: e.g. create-react-app
+  NOT webpack
+
+- Ok to borrow icon if free license. Ok to draw from scratch.
+
+- Does not necessarily need to be cross-browser compatible, but
+  having it be would be appreciated
+
+- Preferably is responsive to different device sizes. If extra time,
+  the extra time should start being used here.
+
+- "Dump to the browser" means output to Chrome DevTools console via
+  "console.log()" or any other code that will cause the console to
+  output it.
+
+- Should be dumped to the browser in a format acceptable for storage:
+  e.g., JSON
+
+- Does not need to be hosted, but not a bad thing to do if you have
+  time to waste
+
+- Extensive code commenting not necessary if care taken to provide
+  self-explanatory code.
+
+-------------------------------------------------------------------------------
+ OUTLINE-ISH/NOTES
+-------------------------------------------------------------------------------
+- Startup name title: Cows without Thrones, LLC
+- Startup logo as icon in browser tab: [cow stick figure, boxy, 80's Atari style]
+- Contact us web form that captures contact information:
+    Name: A cow has no name
+    Phone: (555) iam-ymmy
+    Address:
+      214 Tavern Lane,
+- Google reCaptcha V3 implement in page.
+    Submission of form requires Google captcha pass
+    Dump all the information from the form submission to browser
+    console.
+
+-------------------------------------------------------------------------------
+ RESOURCES
+-------------------------------------------------------------------------------
+- Google reCaptcha Reference:
+    https://developers.google.com/recaptcha/docs/display
+
