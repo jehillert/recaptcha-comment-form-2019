@@ -104,7 +104,6 @@ function Form() {
   };
 
   const handleClick = async (event) => {
-    event.preventDefault();
     await captcha.execute()
     showData();
     // return resetForm();

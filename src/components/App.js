@@ -24,12 +24,12 @@ S.BodyContainer = styled.div`
 
 const App = () => (
   <ThemeProvider theme={defaultTheme}>
-    <S.AppContainer id='primary-container'>
-      <GlobalStyle />
-      <S.BodyContainer>
-        <Form />
-      </S.BodyContainer>
-    </S.AppContainer>
+      <S.AppContainer id='primary-container'>
+        <GlobalStyle />
+        <S.BodyContainer>
+          <Form />
+        </S.BodyContainer>
+      </S.AppContainer>
   </ThemeProvider>
 );
 
