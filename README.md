@@ -1,7 +1,8 @@
 # ATTN: Headstorm Personnel
   A working demo for my solution to this challenge can be found [here](https://headstorm-fec.hillert.dev).
 
-  My pre-planning notes, assumptions and other feedback related to this exercise are included in "README - Applicant's Notes.txt", which may be found in the README folder.
+  My pre-planning notes, assumptions and other feedback related to this exercise are included in the "README - Applicant's Notes.txt" file (root
+  folder).
 
   This rest of this file contains:
    - brief instructions for running my code; and
