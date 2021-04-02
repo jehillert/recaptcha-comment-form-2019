@@ -1,15 +1,16 @@
 # RECAPTCHA COMMENT FORM
 
-This was a take-home challenge I completed when applying for my first front-end developer role.
-
-## LIVE DEMO
-  A working demo for my solution to this challenge can be found [here](https://recaptcha-submission-form.hillert.dev).
+## ABOUT
+- A live demo for this repository is available [here](https://recaptcha-submission-form.hillert.dev).
+- This was a take-home challenge I completed when applying for my first front-end developer role.
+- The red square in the upper right hand corner indicates the recaptcha status (it does not close the modal).
+- When the red indicator returns green, it means the recaptcha believes the user is a human.
 
 ## TO RUN LOCALLY
-  1. In a terminal, from this projects root directory, enter:<br>
-    `npm install`
+1. In a terminal, from this projects root directory, enter:<br>
+    `npm install`</br>
     `npm start`
-  2. Open a browser to the following address if start command does not do so automatically:<br>
+2. Open a browser to the following address if start command does not do so automatically:<br>
    `http://localhost:3000` if app does not automatically do so.
 
 ## ADDITIONAL [AUTO-GENERATED] DOCUMENTATION
